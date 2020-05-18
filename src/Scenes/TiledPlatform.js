@@ -3,11 +3,11 @@ class TiledPlatform extends Phaser.Scene {
         super("tiledPlatformScene");
 
         // variables and settings
-        this.ACCELERATION = 500;
-        this.MAX_X_VEL = 200;   // pixels/second
-        this.MAX_Y_VEL = 2000;
-        this.DRAG = 600;    
-        this.JUMP_VELOCITY = -650;
+        this.ACCELERATION = 510;
+        this.MAX_X_VEL = 205;   // pixels/second
+        this.MAX_Y_VEL = 2010;
+        this.DRAG = 605;    
+        this.JUMP_VELOCITY = -660;
     }
 // first commit
     preload() {
