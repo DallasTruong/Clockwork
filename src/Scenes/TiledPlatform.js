@@ -3,10 +3,10 @@ class TiledPlatform extends Phaser.Scene {
         super("tiledPlatformScene");
 
         // variables and settings
-        this.ACCELERATION = 500;
+        this.ACCELERATION = 400;
         this.MAX_X_VEL = 200;   // pixels/second
         this.MAX_Y_VEL = 2000;
-        this.DRAG = 600;    
+        this.DRAG = 1000;    
         this.JUMP_VELOCITY = -650;
     }
 // first commit
@@ -18,6 +18,8 @@ class TiledPlatform extends Phaser.Scene {
             frameHeight: 16
         });
         this.load.tilemapTiledJSON("platform_map", "tilemap02.json");    // Tiled JSON file
+        this.load.image("1bit_tiles", "colored_packed.png");    // tile sheet
+        this.load.tilemapTiledJSON("map", "tilemap01.json");    // Tiled JSON file
     }
 
     create() {
@@ -80,6 +82,7 @@ class TiledPlatform extends Phaser.Scene {
         this.physics.add.collider(this.p1, groundLayer);
         this.physics.add.overlap(this.p1, this.coinGroup, (obj1, obj2) => {
             obj2.destroy(); // remove coin on overlap
+            this.sound.play('coin');
         });
 
         // setup camera
@@ -118,6 +121,7 @@ class TiledPlatform extends Phaser.Scene {
         }
         if(this.p1.body.blocked.down && Phaser.Input.Keyboard.JustDown(cursors.up)) {
             this.p1.body.setVelocityY(this.JUMP_VELOCITY);
+            this.sound.play('jump');
         }
 
         // scene switching / restart

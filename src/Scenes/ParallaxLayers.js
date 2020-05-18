@@ -60,6 +60,7 @@ class ParallaxLayers extends Phaser.Scene {
         this.physics.add.collider(this.p1, groundLayer);
         this.physics.add.overlap(this.p1, this.coinGroup, (obj1, obj2) => {
             obj2.destroy(); // remove coin on overlap
+            this.sound.play('coin');
         });
 
         // setup camera
@@ -94,6 +95,7 @@ class ParallaxLayers extends Phaser.Scene {
         }
         if(this.p1.body.blocked.down && Phaser.Input.Keyboard.JustDown(cursors.up)) {
             this.p1.body.setVelocityY(this.JUMP_VELOCITY);
+            this.sound.play('jump');
         }
 
         // scene switching / restart

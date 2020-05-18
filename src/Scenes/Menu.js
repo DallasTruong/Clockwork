@@ -3,6 +3,13 @@ class Menu extends Phaser.Scene {
         super("menuScene");
     }
 
+    preload()
+    {
+        this.load.audio('jump', './assets/Jump.wav');
+        this.load.audio('coin', './assets/coin.wav');
+        this.load.audio('song', './assets/Clockwork_Confusion_test.wav');
+    }
+
     create() {
         // display mennu
         let menuConfig = {
@@ -30,11 +37,26 @@ class Menu extends Phaser.Scene {
         this.swap = this.input.keyboard.addKey('S');
         cursors = this.input.keyboard.createCursorKeys();
         //keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Down);
+
+        var music = this.sound.add('song');
+
+        let musicconfig=
+        {
+            mute: false,
+            volume: 1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0   
+        }
+
+        music.play();
     }
 
    update() {
         if (Phaser.Input.Keyboard.JustDown(this.swap)) {
-            this.scene.start('tiledSimpleScene');
+            this.scene.start('tiledPlatformScene');
         }
     } 
 }
