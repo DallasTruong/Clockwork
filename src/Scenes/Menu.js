@@ -34,7 +34,7 @@ class Menu extends Phaser.Scene {
 
    update() {
         if (Phaser.Input.Keyboard.JustDown(this.swap)) {
-            this.scene.start('tiledSimpleScene');
+            this.scene.start('tiledPlatformScene');
         }
     } 
 }
