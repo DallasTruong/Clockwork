@@ -30,22 +30,19 @@ class TiledPlatform extends Phaser.Scene {
         const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
         const sceneryLayer = map.createStaticLayer("Scenery", tileset, 0, 0);
         
-        // set map collision (two styles: uncomment *one* of the two lines below)
-        //groundLayer.setCollision([19, 20, 21, 67, 69, 120]);
+        // set map collision 
         groundLayer.setCollisionByProperty({ collides: true });
         
         // define a render debug so we can see the tilemap's collision bounds
         const debugGraphics = this.add.graphics().setAlpha(0.75);
         groundLayer.renderDebug(debugGraphics, {
-            tileColor: null,    // color of non-colliding tiles
-            collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    // color of colliding tiles
-            faceColor: new Phaser.Display.Color(40, 39, 37, 255)                // color of colliding face edges
+            tileColor: null,    
+            collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    
+            faceColor: new Phaser.Display.Color(40, 39, 37, 255)                
         });
 
         // setup player
         // place player on map from Tiled object layer data
-        // .findObject(objectLayer, callback [, context])
-        // "Find the first object in the given object layer that satisfies the provided testing function. I.e. finds the first object for which callback returns true."
         const p1Spawn = map.findObject("Objects", obj => obj.name === "P1 Spawn");
         this.p1 = this.physics.add.sprite(p1Spawn.x, p1Spawn.y, "kenney_sheet", 450);
         // set player physics properties
@@ -53,17 +50,12 @@ class TiledPlatform extends Phaser.Scene {
         this.p1.body.setMaxVelocity(this.MAX_X_VEL, this.MAX_Y_VEL);
         this.p1.body.setCollideWorldBounds(true);
         
-        /* TO-DO: player animations */
-
-        // generate coin objects from object data
-        // .createFromObjects(name, id, spriteConfig [, scene])
+    
         this.coins = map.createFromObjects("Objects", "coin", {
             key: "kenney_sheet",
             frame: 214
         }, this);
-        // createFromObjects can't add Physics Sprites, so we add physics manually
-        // https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.World.html#enable__anchor
-        // second parameter is 0: DYNAMIC_BODY or 1: STATIC_BODY
+    
         this.physics.world.enable(this.coins, Phaser.Physics.Arcade.STATIC_BODY);
         // now use JS .map method to set a more accurate circle body on each sprite
         this.coins.map((coin) => {
@@ -94,8 +86,7 @@ class TiledPlatform extends Phaser.Scene {
         this.swap = this.input.keyboard.addKey('S');
         this.reload = this.input.keyboard.addKey('R');
 
-        // debug
-        //this.scene.start("");
+    
     }
 
     update() {
@@ -112,7 +103,7 @@ class TiledPlatform extends Phaser.Scene {
             this.p1.body.setDragX(this.DRAG);
         }
         // player jump
-        // note that we need body.blocked rather than body.touching b/c the former applies to tilemap tiles and the latter to the "ground"
+        
         if(!this.p1.body.blocked.down) {
             //this.p1.anims.play('jump', true);
         }

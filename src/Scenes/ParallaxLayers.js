@@ -21,7 +21,7 @@ class ParallaxLayers extends Phaser.Scene {
         const map = this.add.tilemap("parallax_map"); 
         // add a tile set to the map
         const tileset = map.addTilesetImage("colored_packed", "1bit_tiles");
-        // create a static layer (ie, can't be modified)
+        // create a static layer 
         // these have scroll factors set to create parallax layer scrolling
         const bgLayer = map.createStaticLayer("Background", tileset, 0, 0).setScrollFactor(0.25);
         const pipesLayer = map.createStaticLayer("Pipes", tileset, 0, 0).setScrollFactor(0.5);
