@@ -14,12 +14,12 @@ let config = {
             //debug: true,
         }
     },
-    scene: [ Menu, TiledSimple, TiledPlatform, ParallaxLayers ]
+    scene: [ Menu, TiledPlatform, ParallaxLayers ]
 };
 
 const game = new Phaser.Game(config);
 
-// globals
+// globals vars
 const centerX = game.config.width / 2;
 const centerY = game.config.height / 2;
 const w = game.config.width;
