@@ -14,7 +14,7 @@ let config = {
             //debug: true,
         }
     },
-    scene: [ Menu, TiledPlatform, ParallaxLayers ]
+    scene: [ Menu, TiledPlatform, ParallaxLayers, LevelThree,]
 };
 
 const game = new Phaser.Game(config);

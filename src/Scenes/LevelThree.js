@@ -1,6 +1,6 @@
-class ParallaxLayers extends Phaser.Scene {
+class LevelThree extends Phaser.Scene {
     constructor() {
-        super("parallaxLayersScene");
+        super("LevelThreeScene");
 
         // variables and settings
         this.ACCELERATION = 500;
@@ -9,16 +9,16 @@ class ParallaxLayers extends Phaser.Scene {
         this.DRAG = 600;    
         this.JUMP_VELOCITY = -650;
     }
-
+// load
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.tilemapTiledJSON("parallax_map", "tilemap05.json");    // Tiled JSON file
+        this.load.tilemapTiledJSON("levelthree_map", "tilemap05.json");    // Tiled JSON file
     }
 
     create() {
         // add a tile map
-        const map = this.add.tilemap("parallax_map"); 
+        const map = this.add.tilemap("levelthree_map"); 
         // add a tile set to the map
         const tileset = map.addTilesetImage("colored_packed", "1bit_tiles");
         // create a static layer 

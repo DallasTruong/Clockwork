@@ -9,11 +9,11 @@ class ParallaxLayers extends Phaser.Scene {
         this.DRAG = 600;    
         this.JUMP_VELOCITY = -650;
     }
-
+// load
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.tilemapTiledJSON("parallax_map", "tilemap05.json");    // Tiled JSON file
+        this.load.tilemapTiledJSON("parallax_map", "tilemap04.json");    // Tiled JSON file
     }
 
     create() {
