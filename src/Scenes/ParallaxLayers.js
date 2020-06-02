@@ -13,7 +13,7 @@ class ParallaxLayers extends Phaser.Scene {
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.tilemapTiledJSON("parallax_map", "tilemap05.json");    // Tiled JSON file
+        this.load.tilemapTiledJSON("parallax_map", "tilemap04.json");    // Tiled JSON file
     }
 
     create() {
@@ -103,7 +103,7 @@ class ParallaxLayers extends Phaser.Scene {
             this.scene.restart();
         }
         if(Phaser.Input.Keyboard.JustDown(this.swap)) {
-            this.scene.start("arrayMapScene");
+            this.scene.start("LevelThreeScene");
         }
     }
 }

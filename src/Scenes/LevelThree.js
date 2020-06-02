@@ -9,16 +9,16 @@ class LevelThree extends Phaser.Scene {
         this.DRAG = 600;    
         this.JUMP_VELOCITY = -650;
     }
-// load
+
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.tilemapTiledJSON("levelthree_map", "tilemap05.json");    // Tiled JSON file
+        this.load.tilemapTiledJSON("level3_map", "tilemap05.json");    // Tiled JSON file
     }
 
     create() {
         // add a tile map
-        const map = this.add.tilemap("levelthree_map"); 
+        const map = this.add.tilemap("level3_map"); 
         // add a tile set to the map
         const tileset = map.addTilesetImage("colored_packed", "1bit_tiles");
         // create a static layer 
@@ -103,7 +103,7 @@ class LevelThree extends Phaser.Scene {
             this.scene.restart();
         }
         if(Phaser.Input.Keyboard.JustDown(this.swap)) {
-            this.scene.start("arrayMapScene");
+            this.scene.start("LevelFourScene");
         }
     }
 }
