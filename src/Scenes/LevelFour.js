@@ -7,7 +7,7 @@ class LevelFour extends Phaser.Scene {
         this.MAX_X_VEL = 200;   // pixels/second
         this.MAX_Y_VEL = 2000;
         this.DRAG = 600;    
-        this.JUMP_VELOCITY = -650;
+        this.JUMP_VELOCITY = -650; 
     }
 // load
     preload() {
