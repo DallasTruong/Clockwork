@@ -24,10 +24,10 @@ class LevelTwo extends Phaser.Scene {
         const map = this.add.tilemap("map2"); 
         // add a tile set to the map
         const tileset = map.addTilesetImage("Tile_Sheet1", "1bit_tiles");
-        const tileset = map.addTilesetImage("clock", "back");
+        const tileset2 = map.addTilesetImage("clock", "back");
         // create a static layer 
         // these have scroll factors set to create parallax layer scrolling
-        const bgLayer = map.createStaticLayer("Background", tileset, 0, 0).setScrollFactor(0.25);
+        const bgLayer = map.createStaticLayer("Background", tileset2, 0, 0).setScrollFactor(0.25);
         const laddersLayer = map.createStaticLayer("Scenery", tileset, 0, 0).setScrollFactor(0.75);
         const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
 
