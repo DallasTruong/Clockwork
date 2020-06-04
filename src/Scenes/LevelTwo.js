@@ -75,6 +75,7 @@ class LevelTwo extends Phaser.Scene {
     }
 
     update() {
+        
         // player movement
         if(cursors.left.isDown) {
             this.p1.body.setAccelerationX(-this.ACCELERATION);
