@@ -13,7 +13,10 @@ class LevelTwo extends Phaser.Scene {
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.tilemapTiledJSON("map2", "tilemap02.json");    // Tiled JSON file
+        this.load.tilemapTiledJSON("map2", "tilemap02.json");    // Tiled JSON file\
+        this.load.image("back", "clock.png");
+        this.load.image("1bit_tiles", "Tile_Sheet1.png");
+        
     }
 
     create() {
@@ -21,6 +24,7 @@ class LevelTwo extends Phaser.Scene {
         const map = this.add.tilemap("map2"); 
         // add a tile set to the map
         const tileset = map.addTilesetImage("Tile_Sheet1", "1bit_tiles");
+        const tileset = map.addTilesetImage("clock", "back");
         // create a static layer 
         // these have scroll factors set to create parallax layer scrolling
         const bgLayer = map.createStaticLayer("Background", tileset, 0, 0).setScrollFactor(0.25);
