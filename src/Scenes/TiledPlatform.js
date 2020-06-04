@@ -13,13 +13,13 @@ class TiledPlatform extends Phaser.Scene {
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.spritesheet("kenney_sheet", "Tile_Sheet1.png", {
+        this.load.spritesheet("kenney_sheet", "Character.png", {
             frameWidth: 16,
             frameHeight: 16
         });
         this.load.tilemapTiledJSON("platform_map", "tilemap02.json");    // Tiled JSON file
         this.load.image("1bit_tiles", "Tile_Sheet1.png");    // tile sheet
-        this.load.tilemapTiledJSON("map", "tilemap01.json");    // Tiled JSON file
+        //this.load.tilemapTiledJSON("map", "tilemap01.json");    // Tiled JSON file
     }
 
     create() {
