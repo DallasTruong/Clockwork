@@ -20,6 +20,7 @@ class TiledPlatform extends Phaser.Scene {
         this.load.tilemapTiledJSON("platform_map", "tilemap04.json");    // Tiled JSON file
         this.load.image("1bit_tiles", "Tile_Sheet1.png");    // tile sheet
         //this.load.tilemapTiledJSON("map", "tilemap01.json");    // Tiled JSON file
+        this.load.image("back2", "Back2.png");
     }
 
     create() {
@@ -27,8 +28,8 @@ class TiledPlatform extends Phaser.Scene {
         const map = this.add.tilemap("platform_map");
         // add a tileset to the map
         const tileset = map.addTilesetImage("Tile_Sheet1", "1bit_tiles");
-        // create tilemap layers
-        const backgroundLayer = map.createStaticLayer("Background", tileset, 0, 0);
+        const tileset2 = map.addTilesetImage("Back2", "back2");
+        const backgroundLayer = map.createStaticLayer("Background", tileset2, 0, 0);
         const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
         const sceneryLayer = map.createStaticLayer("Scenery", tileset, 0, 0);
         

@@ -28,7 +28,7 @@ class LevelTwo extends Phaser.Scene {
         // create a static layer 
         // these have scroll factors set to create parallax layer scrolling
         const bgLayer = map.createStaticLayer("Background", tileset2, 0, 0).setScrollFactor(0.25);
-        const laddersLayer = map.createStaticLayer("Scenery", tileset, 0, 0).setScrollFactor(0.75);
+        const sceneryLayer = map.createStaticLayer("Scenery", tileset, 0, 0).setScrollFactor(0.75);
         const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
 
         // set map collision
