@@ -103,7 +103,7 @@ class LevelTwo extends Phaser.Scene {
             this.scene.restart();
         }
         if(Phaser.Input.Keyboard.JustDown(this.swap)) {
-            this.scene.start("LevelFourScene");
+            this.scene.start("LevelThreeScene");
         }
     }
 }

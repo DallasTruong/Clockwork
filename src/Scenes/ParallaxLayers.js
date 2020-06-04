@@ -103,7 +103,7 @@ class ParallaxLayers extends Phaser.Scene {
             this.scene.restart();
         }
         if(Phaser.Input.Keyboard.JustDown(this.swap)) {
-            this.scene.start("LevelThreeScene");
+            this.scene.start("LevelTwoScene");
         }
     }
 }
