@@ -13,7 +13,7 @@ class TiledPlatform extends Phaser.Scene {
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.spritesheet("kenney_sheet", "Character.png", {
+        this.load.spritesheet("kenney_sheet", "character.png", {
             frameWidth: 16,
             frameHeight: 16
         });
