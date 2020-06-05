@@ -47,7 +47,7 @@ class TiledPlatform extends Phaser.Scene {
         // setup player
         // place player on map from Tiled object layer data
         const p1Spawn = map.findObject("Objects", obj => obj.name === "P1 Spawn");
-        this.p1 = this.physics.add.sprite(p1Spawn.x, p1Spawn.y, "kenney_sheet", 450);
+        this.p1 = this.physics.add.sprite(p1Spawn.x, p1Spawn.y, "1bit_tiles", 450);
         // set player physics properties
         this.p1.body.setSize(this.p1.width/2);
         this.p1.body.setMaxVelocity(this.MAX_X_VEL, this.MAX_Y_VEL);
@@ -55,7 +55,7 @@ class TiledPlatform extends Phaser.Scene {
         
     
         this.coins = map.createFromObjects("Objects", "coin", {
-            key: "kenney_sheet",
+            key: "1bit_tiles",
             frame: 214
         }, this);
     

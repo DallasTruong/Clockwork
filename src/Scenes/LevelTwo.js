@@ -15,7 +15,7 @@ class LevelTwo extends Phaser.Scene {
         this.load.path = "./assets/";
         this.load.tilemapTiledJSON("map2", "tilemap02.json");    // Tiled JSON file\
         this.load.image("back", "clock.png");
-        this.load.image("1bit_tiles", "Tile_Sheet1.png");
+       
         
     }
 
