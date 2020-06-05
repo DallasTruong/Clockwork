@@ -17,14 +17,15 @@ preload() {
         frameWidth: 16,
         frameHeight: 16
     });
-    this.load.tilemapTiledJSON("platform_map", "tilemap02.json");    // Tiled JSON file
+    this.load.tilemapTiledJSON("platform_map", "tilemap04.json");    // Tiled JSON file
+    this.load.image("back", "Tile_Sheet1.png");
 }
 
 create() {
     // add a tilemap
     const map = this.add.tilemap("platform_map");
     // add a tileset to the map
-    const tileset = map.addTilesetImage("colored_packed", "1bit_tiles");
+    const tileset = map.addTilesetImage("Tile_Sheet1", "back");
     // create tilemap layers
     const backgroundLayer = map.createStaticLayer("Background", tileset, 0, 0);
     const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
