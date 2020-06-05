@@ -31,6 +31,12 @@ class LevelTwo extends Phaser.Scene {
         const sceneryLayer = map.createStaticLayer("Scenery", tileset, 0, 0).setScrollFactor(0.75);
         const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
 
+
+        groundLayer.renderDebug(debugGraphics, {
+            tileColor: null,    
+            collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    
+            faceColor: new Phaser.Display.Color(40, 39, 37, 255)                
+        });
         // set map collision
         groundLayer.setCollisionByProperty({ collides: true });
 
