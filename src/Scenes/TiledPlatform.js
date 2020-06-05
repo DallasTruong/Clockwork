@@ -10,29 +10,25 @@ class TiledPlatform extends Phaser.Scene {
         this.JUMP_VELOCITY = -650;
     }
 // first commit
-    preload() {
-        // load assets
-        this.load.path = "./assets/";
-        this.load.spritesheet("kenney_sheet", "character.png", {
-            frameWidth: 16,
-            frameHeight: 16
-        });
-        this.load.image("1bit_tiles", "Tile_Sheet1.png");    // tile sheet
-        //this.load.tilemapTiledJSON("map", "tilemap01.json");    // Tiled JSON file
-        this.load.image("back2", "Back2.png");
-        this.load.tilemapTiledJSON("platform_map", "tilemap04.json");    // Tiled JSON file
-    }
+preload() {
+    // load assets
+    this.load.path = "./assets/";
+    this.load.spritesheet("kenney_sheet", "colored_transparent_packed.png", {
+        frameWidth: 16,
+        frameHeight: 16
+    });
+    this.load.tilemapTiledJSON("platform_map", "tilemap02.json");    // Tiled JSON file
+}
 
-    create() {
-        // add a tilemaps
-        const map = this.add.tilemap("platform_map");
-        // add a tileset to the map
-        const tileset = map.addTilesetImage("Tile_Sheet1", "1bit_tiles");
-        const tileset2 = map.addTilesetImage("Back2", "back2");
-        const backgroundLayer = map.createStaticLayer("Background", tileset2, 0, 0);
-        const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
-        const sceneryLayer = map.createStaticLayer("Scenery", tileset, 0, 0);
-        
+create() {
+    // add a tilemap
+    const map = this.add.tilemap("platform_map");
+    // add a tileset to the map
+    const tileset = map.addTilesetImage("colored_packed", "1bit_tiles");
+    // create tilemap layers
+    const backgroundLayer = map.createStaticLayer("Background", tileset, 0, 0);
+    const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
+    const sceneryLayer = map.createStaticLayer("Scenery", tileset, 0, 0);
         // set map collision 
         groundLayer.setCollisionByProperty({ collides: true });
         
