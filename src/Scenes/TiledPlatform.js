@@ -17,10 +17,10 @@ class TiledPlatform extends Phaser.Scene {
             frameWidth: 16,
             frameHeight: 16
         });
-        this.load.tilemapTiledJSON("platform_map", "tilemap04.json");    // Tiled JSON file
         this.load.image("1bit_tiles", "Tile_Sheet1.png");    // tile sheet
         //this.load.tilemapTiledJSON("map", "tilemap01.json");    // Tiled JSON file
         this.load.image("back2", "Back2.png");
+        this.load.tilemapTiledJSON("platform_map", "tilemap04.json");    // Tiled JSON file
     }
 
     create() {
