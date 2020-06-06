@@ -32,7 +32,7 @@ class LevelThree extends Phaser.Scene {
 
         // create player
         const p1Spawn = map.findObject("Objects", obj => obj.name === "P1 Spawn");
-        this.p1 = this.physics.add.sprite(p1Spawn.x, p1Spawn.y, "kenney_sheet", 450);
+        this.p1 = this.physics.add.sprite(p1Spawn.x, p1Spawn.y, "kenney_sheet", 7301);
         // set player physics properties
         this.p1.body.setSize(this.p1.width/2);
         this.p1.body.setMaxVelocity(this.MAX_X_VEL, this.MAX_Y_VEL);
@@ -86,7 +86,7 @@ class LevelThree extends Phaser.Scene {
             // set acceleration to 0 so DRAG will take over
             this.p1.body.setAccelerationX(0);
             this.p1.body.setDragX(this.DRAG);
-        }
+        } 
         // player jump
         if(!this.p1.body.blocked.down) {
             // TO-DO: jump animations
