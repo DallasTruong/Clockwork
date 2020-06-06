@@ -66,12 +66,7 @@
                  "height":16,
                  "id":2,
                  "name":"Key3",
-                 "properties":[
-                        {
-                         "name":"collides",
-                         "type":"bool",
-                         "value":false
-                        }],
+                
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -84,12 +79,7 @@
                  "height":16,
                  "id":3,
                  "name":"Door1",
-                 "properties":[
-                        {
-                         "name":"collides",
-                         "type":"bool",
-                         "value":false
-                        }],
+                 
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -102,12 +92,7 @@
                  "height":16,
                  "id":4,
                  "name":"Door2",
-                 "properties":[
-                        {
-                         "name":"collides",
-                         "type":"bool",
-                         "value":false
-                        }],
+                 
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -120,12 +105,7 @@
                  "height":16,
                  "id":5,
                  "name":"Door3",
-                 "properties":[
-                        {
-                         "name":"collides",
-                         "type":"bool",
-                         "value":false
-                        }],
+                
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -138,12 +118,7 @@
                  "height":16,
                  "id":6,
                  "name":"Key1",
-                 "properties":[
-                        {
-                         "name":"collides",
-                         "type":"bool",
-                         "value":false
-                        }],
+                 
                  "rotation":0,
                  "type":"",
                  "visible":true,
