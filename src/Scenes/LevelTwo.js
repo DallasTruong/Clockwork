@@ -1,6 +1,6 @@
-class ParallaxLayers extends Phaser.Scene {
+class LevelTwo extends Phaser.Scene {
     constructor() {
-        super("parallaxLayersScene");
+        super("LevelTwoScene");
 
         // variables and settings
         this.ACCELERATION = 500;
@@ -13,21 +13,30 @@ class ParallaxLayers extends Phaser.Scene {
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.tilemapTiledJSON("parallax_map", "tilemap04.json");    // Tiled JSON file
+        this.load.tilemapTiledJSON("map2", "tilemap02.json");    // Tiled JSON file\
+        this.load.image("back", "clock.png");
+       
+        
     }
 
     create() {
         // add a tile map
-        const map = this.add.tilemap("parallax_map"); 
+        const map = this.add.tilemap("map2"); 
         // add a tile set to the map
         const tileset = map.addTilesetImage("Tile_Sheet1", "1bit_tiles");
+        const tileset2 = map.addTilesetImage("clock", "back");
         // create a static layer 
         // these have scroll factors set to create parallax layer scrolling
-        const bgLayer = map.createStaticLayer("Background", tileset, 0, 0).setScrollFactor(0.25);
-        const pipesLayer = map.createStaticLayer("Pipes", tileset, 0, 0).setScrollFactor(0.5);
-        const laddersLayer = map.createStaticLayer("Ladders", tileset, 0, 0).setScrollFactor(0.75);
+        const bgLayer = map.createStaticLayer("Background", tileset2, 0, 0).setScrollFactor(0.25);
+        const sceneryLayer = map.createStaticLayer("Scenery", tileset, 0, 0).setScrollFactor(0.75);
         const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
 
+
+        groundLayer.renderDebug(debugGraphics, {
+            tileColor: null,    
+            collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    
+            faceColor: new Phaser.Display.Color(40, 39, 37, 255)                
+        });
         // set map collision
         groundLayer.setCollisionByProperty({ collides: true });
 
@@ -76,6 +85,7 @@ class ParallaxLayers extends Phaser.Scene {
     }
 
     update() {
+        
         // player movement
         if(cursors.left.isDown) {
             this.p1.body.setAccelerationX(-this.ACCELERATION);
@@ -103,7 +113,7 @@ class ParallaxLayers extends Phaser.Scene {
             this.scene.restart();
         }
         if(Phaser.Input.Keyboard.JustDown(this.swap)) {
-            this.scene.start("LevelTwoScene");
+            this.scene.start("LevelThreeScene");
         }
     }
 }
