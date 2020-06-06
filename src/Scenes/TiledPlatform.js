@@ -13,19 +13,19 @@ class TiledPlatform extends Phaser.Scene {
 preload() {
     // load assets
     this.load.path = "./assets/";
-    this.load.spritesheet("kenney_sheet", "colored_transparent_packed.png", {
+    this.load.spritesheet("kenney_sheet", "FullSheet.png", {
         frameWidth: 16,
         frameHeight: 16
     });
-    this.load.tilemapTiledJSON("platform_map", "tilemap04.json");    // Tiled JSON file
-    this.load.image("back", "Tile_Sheet1.png");
+    this.load.tilemapTiledJSON("platform_map", "Map1.json");    // Tiled JSON file
+    this.load.image("back", "Fullsheet.png");
 }
 
 create() {
     // add a tilemap
     const map = this.add.tilemap("platform_map");
     // add a tileset to the map
-    const tileset = map.addTilesetImage("Tile_Sheet1", "back");
+    const tileset = map.addTilesetImage("FullSheet", "back");
     // create tilemap layers
     const backgroundLayer = map.createStaticLayer("Background", tileset, 0, 0);
     const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
@@ -44,7 +44,7 @@ create() {
         // setup player
         // place player on map from Tiled object layer data
         const p1Spawn = map.findObject("Objects", obj => obj.name === "P1 Spawn");
-        this.p1 = this.physics.add.sprite(p1Spawn.x, p1Spawn.y, "kenney_sheet", 450);
+        this.p1 = this.physics.add.sprite(p1Spawn.x, p1Spawn.y, "kenney_sheet", 7301);
         // set player physics properties
         this.p1.body.setSize(this.p1.width/2);
         this.p1.body.setMaxVelocity(this.MAX_X_VEL, this.MAX_Y_VEL);
@@ -53,7 +53,7 @@ create() {
     
         this.coins = map.createFromObjects("Objects", "coin", {
             key: "kenney_sheet",
-            frame: 214
+            frame: 7298
         }, this);
     
         this.physics.world.enable(this.coins, Phaser.Physics.Arcade.STATIC_BODY);
