@@ -24,4 +24,4 @@ const centerX = game.config.width / 2;
 const centerY = game.config.height / 2;
 const w = game.config.width;
 const h = game.config.h;
-let cursors = null;
+let cursors = null; 
