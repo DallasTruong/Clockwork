@@ -13,19 +13,18 @@ class ParallaxLayers extends Phaser.Scene {
     preload() {
         // load assets
         this.load.path = "./assets/";
-        this.load.tilemapTiledJSON("parallax_map", "tilemap04.json");    // Tiled JSON file
+        this.load.tilemapTiledJSON("parallax_map", "Map2.json");    // Tiled JSON file
     }
 
     create() {
         // add a tile map
         const map = this.add.tilemap("parallax_map"); 
         // add a tile set to the map
-        const tileset = map.addTilesetImage("Tile_Sheet1", "1bit_tiles");
+        const tileset = map.addTilesetImage("FullSheet", "1bit_tiles");
         // create a static layer 
         // these have scroll factors set to create parallax layer scrolling
         const bgLayer = map.createStaticLayer("Background", tileset, 0, 0).setScrollFactor(0.25);
-        const pipesLayer = map.createStaticLayer("Pipes", tileset, 0, 0).setScrollFactor(0.5);
-        const laddersLayer = map.createStaticLayer("Ladders", tileset, 0, 0).setScrollFactor(0.75);
+        const sceneryLayer = map.createStaticLayer("Ladders", tileset, 0, 0).setScrollFactor(0.75);
         const groundLayer = map.createStaticLayer("Ground", tileset, 0, 0);
 
         // set map collision

@@ -18,7 +18,7 @@ preload() {
         frameHeight: 16
     });
     this.load.tilemapTiledJSON("platform_map", "Map1.json");    // Tiled JSON file
-    this.load.image("back", "Fullsheet.png");
+    this.load.image("back", "FullSheet.png");
 }
 
 create() {
